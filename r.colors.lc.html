@@ -1,45 +1,42 @@
 <h2>DESCRIPTION</h2>
 
 <em>r.colors.lc</em> sets the colors for a land cover classification.
-
+<p>
 There are different variants of how the color values can be selected.
-
+<p>
 The first one is that a reference vector map <b>referencemap</b> with a class
 column <b>class_column</b> and a r:g:b color column <b>color_column</b> is
 passed as parameter. Then the color values from the color column are set for
 the corresponding classes. If the class information in the class column
 contains integer values, these are assigned directly to the map values. If the
 values are string values, the category label of the map is used.
-
+<p>
 The second possibility is to pass only a land cover map <b>map</b>.
 If this map has a category label, it is tried to match it with fuuzy logic
 to a land cover class color dictionary and set the colors automatically.
 If the map does not have category labels, a random color map is added.
 
-<h2>EXAMPLE</h2>
+<h2>EXAMPLES</h2>
+
 <h3>Assign color from color column in referencemap</h3>
+
 <div class="code"><pre>
 r.colors.lc referencemap=incora_dortmund_LULC_training_points_color map=classification color_column=color class_column=lulc_int
 </pre></div>
+
 <h3>Matching land cover category labels with fuzzy logic</h3>
+
 <div class="code"><pre>
 r.colors.lc map=classification
 </pre></div>
 
-
 <h2>SEE ALSO</h2>
 
 <em>
-<a href="r.colors.fuzzy_lc.html">r.colors.fuzzy_lc</a>,
-<a href="v.colors.to.rast.html">v.colors.to.rast</a>
+<a href="r.colors.fuzzy_lc.html">r.colors.fuzzy_lc</a> (addon),
+<a href="v.colors.to.rast.html">v.colors.to.rast</a> (addon)
 </em>
 
 <h2>AUTHORS</h2>
 
-Anika Weinmann and Guido Riembauer, <a href="https://www.mundialis.de/">mundialis</a>
-
-
-<!--
-<p>
-<i>Last changed: $Date$</i>
--->
+Anika Weinmann and Guido Riembauer, <a href="https://www.mundialis.de/">mundialis</a>, Germany
