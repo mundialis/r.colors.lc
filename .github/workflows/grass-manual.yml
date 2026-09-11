@@ -4,9 +4,11 @@ on:
   push:
     branches: [ main ]
 
-# the workflow does not require permissions, but to avoid a code security warning this should be explicitly defined:
-permissions: {}
-
 jobs:
   grass-manual:
     uses: mundialis/github-workflows/.github/workflows/grass-manual.yml@main
+    # the workflow requires permissions that need to be granted by the parent job:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
